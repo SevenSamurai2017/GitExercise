@@ -1,4 +1,4 @@
-
+/*
 package is.ru.TicTacToe;
 
 public class HelloWorld {
@@ -10,3 +10,4 @@ public class HelloWorld {
 
 }
 
+*/
