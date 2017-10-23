@@ -15,4 +15,10 @@ public class PlayerTest {
 		Player P1 = new Player("Manni", 'X');
 		assertEquals(0, P1.getNumberOfWins());
 	}
+	@Test
+	public void playerWonTest() {
+		Player P1 = new Player("Manni", 'X');
+		P1.playerWon();
+		assertEquals(1, P1.getNumberOfWins());
+	}
 }
