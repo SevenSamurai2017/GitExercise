@@ -33,6 +33,13 @@ public class Board {
         }
         return '1';
     }        
-
+    public char checkHorizontal(){
+        for(int i = 0; i < 3; i++){
+            if(board[0][i] == board[1][i] && board[0][i] == board[2][i]){
+                return board[0][i];
+            }
+        }
+        return '1';
+    }
 }
 
