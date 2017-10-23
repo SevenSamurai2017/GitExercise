@@ -3,6 +3,7 @@ package is.ru.TicTacToe;
 
 public class Board {
 
+	public int x, y;
     public char board[][];
 
     public Board(){
@@ -49,6 +50,50 @@ public class Board {
             return board[0][2];
         }
         return '1';
+    }
+    public void getCoordinate(int number){
+	    if(number == 1){
+	        x = 0;
+	        y = 0;
+	    }
+	    else if(number == 2){
+	        x = 0;
+	        y = 1;
+	    }
+	    else if(number == 3){
+	        x = 0;
+	        y = 2;
+	    }
+	    else if(number == 4){
+	        x = 1;
+	        y = 0;
+	    }
+	    else if(number == 5){
+	        x = 1;
+	        y = 1;
+	    }
+	    else if(number == 6){
+	        x = 1;
+	        y = 2;
+	    }
+	    else if(number == 7){
+	        x = 2;
+	        y = 0;
+	    }
+	    else if(number == 8){
+	        x = 2;
+	        y = 1;
+	    }
+	    else if(number == 9){
+	        x = 2;
+	        y = 2;
+	    }
+    }
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
     }
 }
 
