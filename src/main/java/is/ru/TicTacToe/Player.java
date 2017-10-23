@@ -19,4 +19,12 @@ public class Player {
     public int getNumberOfWins(){
         return numberOfWins;
     }
+
+    public void playerWon(){
+    	numberOfWins++;
+    }
+
+    public void playerAction(tictactoe tic){
+
+    }
 }
