@@ -10,4 +10,6 @@ repositories {
 dependencies {
 	compile 'junit:junit:4.12'
 }
-task stage (dependsOn: installDist)
+task stage(dependsOn: ['installDist'])
+
+installDist
