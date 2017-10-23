@@ -10,4 +10,9 @@ public class PlayerTest {
 		Player P1 = new Player("Manni", 'X');
 		assertEquals("Manni", P1.getName());
 	}
+	@Test
+	public void getNumberOfWinsTest() {
+		Player P1 = new Player("Manni", 'X');
+		assertEquals(0, P1.getNumberOfWins());
+	}
 }
