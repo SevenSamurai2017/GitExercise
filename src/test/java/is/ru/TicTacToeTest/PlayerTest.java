@@ -21,4 +21,15 @@ public class PlayerTest {
 		P1.playerWon();
 		assertEquals(1, P1.getNumberOfWins());
 	}
+	@Test
+	public void multipleWinsTest() {
+		Player P1 = new Player("Manni", 'X');
+		P1.playerWon();
+		P1.playerWon();
+		P1.playerWon();
+		P1.playerWon();
+		P1.playerWon();
+
+		assertEquals(5, P1.getNumberOfWins());
+	}
 }
