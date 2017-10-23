@@ -41,5 +41,14 @@ public class Board {
         }
         return '1';
     }
+    public char checkDiagonal(){
+ 	    if(board[0][0] == board[1][1] && board[1][1] == board[2][2]){
+            return board[0][0];
+        }
+        if(board[0][2] == board[1][1] && board[1][1] == board[2][0]){
+            return board[0][2];
+        }
+        return '1';
+    }
 }
 
