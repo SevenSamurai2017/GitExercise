@@ -24,7 +24,7 @@ public class Player {
     	numberOfWins++;
     }
 
-    public void playerAction(tictactoe tic){
+    /*public void playerAction(tictactoe tic){
 
-    }
+    }*/
 }
