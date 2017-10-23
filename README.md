@@ -7,5 +7,5 @@ Here we have implemented the game of TicTacToe, where two users can play this cl
 This project was developed using Sublime Text 3 and IntelliJ as development environments, Github for version control, Travis CI for continuous integration and Heroku for the deployment and production environment. 
 
 
-[![Build Status](https://travis-ci.org/SevenSamurai2017/GitExercise.png)](https://travis-ci.org/SevenSamurai2017/GitExercise)] 
+[![Build Status](https://travis-ci.org/SevenSamurai2017/GitExercise.png)](https://travis-ci.org/SevenSamurai2017/GitExercise)
 
