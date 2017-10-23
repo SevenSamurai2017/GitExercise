@@ -1,1 +1,1 @@
-web: build/install/calcApi/bin/calcApi
+web: build/install/TicTacToe/bin/TicTacToe
