@@ -19,4 +19,12 @@ public class BoardTest {
 		b.board[0][2] = 'X';
 		assertEquals('X', b.checkVertical());
 	}
+	@Test
+	public void checkHorizontalTest() {
+		Board b = new Board();
+		b.board[0][0] = 'O';
+		b.board[1][0] = 'O';
+		b.board[2][0] = 'O';
+		assertEquals('O', b.checkHorizontal());
+	}
 }
