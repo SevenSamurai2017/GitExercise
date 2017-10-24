@@ -25,7 +25,7 @@ public class TicTacToe{
         currentPlayer = player1;
         actions = 0;
 	}
-	
+
 	public boolean checkForWin(){
         char winner;
         winner = b.checkDiagonal();
@@ -47,5 +47,15 @@ public class TicTacToe{
             return true;
         }
         return false;
+    }
+
+    public void changePlayer(){
+        if(currentPlayer == player1){
+            currentPlayer = player2;
+        }
+        else if(currentPlayer == player2){
+            currentPlayer = player1;
+        }
+        actions++;
     }
 }
