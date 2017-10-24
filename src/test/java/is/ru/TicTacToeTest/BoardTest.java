@@ -27,4 +27,12 @@ public class BoardTest {
 		b.board[2][0] = 'O';
 		assertEquals('O', b.checkHorizontal());
 	}
+	@Test
+	public void checkDiagonalTest() {
+		Board b = new Board();
+		b.board[0][0] = 'O';
+		b.board[1][1] = 'O';
+		b.board[2][2] = 'O';
+		assertEquals('O', b.checkDiagonal());
+	}
 }
