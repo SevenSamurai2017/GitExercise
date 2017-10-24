@@ -7,7 +7,18 @@ public class HumanTest {
 
 	@Test
 	public void getNameTest() {
-		Human P1 = new Human("Manni", 'X');
-		assertEquals("Manni", P1.getName());
+		Human H1 = new Human("Hassi", 'X');
+		assertEquals("Hassi", H1.getName());
+	}
+	@Test
+	public void getNumberOfWinsTest() {
+		Human H1 = new Human("Hassi", 'X');
+		assertEquals(0, H1.getNumberOfWins());
+	}
+	@Test
+	public void playerWonTest() {
+		Human H1 = new Human("Hassi", 'X');
+		H1.playerWon();
+		assertEquals(1, H1.getNumberOfWins());
 	}
 }
