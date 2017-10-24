@@ -25,4 +25,27 @@ public class TicTacToe{
         currentPlayer = player1;
         actions = 0;
 	}
+	
+	public boolean checkForWin(){
+        char winner;
+        winner = b.checkDiagonal();
+        if(winner != '1'){
+            System.out.println(currentPlayer.name + " is the winner!");
+            currentPlayer.numberOfWins++;
+            return true;
+        }
+        winner = b.checkHorizontal();
+        if(winner != '1'){
+            System.out.println(currentPlayer.name + " is the winner!");
+            currentPlayer.numberOfWins++;
+            return true;
+        }
+        winner = b.checkVertical();
+        if(winner != '1'){
+            System.out.println(currentPlayer.name + " is the winner!");
+            currentPlayer.numberOfWins++;
+            return true;
+        }
+        return false;
+    }
 }
