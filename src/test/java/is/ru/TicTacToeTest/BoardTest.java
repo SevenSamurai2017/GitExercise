@@ -1,0 +1,38 @@
+package is.ru.TicTacToe;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class BoardTest {
+
+	@Test
+	public void fillBoardTest() {
+		Board b = new Board();
+		b.fillBoard();
+		assertEquals('1', b.board[0][0]);
+	}
+	@Test
+	public void checkVerticalTest() {
+		Board b = new Board();
+		b.board[0][0] = 'X';
+		b.board[0][1] = 'X';
+		b.board[0][2] = 'X';
+		assertEquals('X', b.checkVertical());
+	}
+	@Test
+	public void checkHorizontalTest() {
+		Board b = new Board();
+		b.board[0][0] = 'O';
+		b.board[1][0] = 'O';
+		b.board[2][0] = 'O';
+		assertEquals('O', b.checkHorizontal());
+	}
+	@Test
+	public void checkDiagonalTest() {
+		Board b = new Board();
+		b.board[0][0] = 'O';
+		b.board[1][1] = 'O';
+		b.board[2][2] = 'O';
+		assertEquals('O', b.checkDiagonal());
+	}
+}
