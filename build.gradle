@@ -21,10 +21,14 @@ jar {
 	}
 }
 
-task stage(dependsOn: ['installDist'])
-
 javadoc {
     source = sourceSets.main.allJava
     classpath = configurations.compile
 	destinationDir = file("docs")
+}
+
+task stage(dependsOn: installDist)
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.2.1'
 }
