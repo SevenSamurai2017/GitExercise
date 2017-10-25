@@ -38,4 +38,9 @@ footer {
     bottom: 0;
 }
 
+#btn00, #btn10, #btn20, #btn01, #btn11, #btn21,
+#btn02, #btn12, #btn22 {
+  width: 80px;
+  height: 80px;
+}
 
