@@ -1,13 +1,24 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = 'is.ru.TicTacToe'
+mainClassName = 'is.ru.TicTacToe.WebServer'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	compile 'org.slf4j:slf4j-api:1.7.5'
+	compile 'org.slf4j:slf4j-simple:1.7.5'
 	compile 'junit:junit:4.12'
+	compile 'com.sparkjava:spark-core:2.5'
+
 }
+
+jar {
+	manifest {
+		attributes("Main-Class": "is.ru.TicTacToe.WebServer")
+	}
+}
+
 task stage(dependsOn: ['installDist'])
