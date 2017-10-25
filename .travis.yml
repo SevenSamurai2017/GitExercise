@@ -1,6 +1,6 @@
 language: java
 before_install: 
-- chmode +x gradlew
+- chmod +x gradlew
 notifications:
   email: false
 deploy:
