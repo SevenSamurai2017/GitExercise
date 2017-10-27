@@ -10,8 +10,8 @@ public class TicTacToe {
 
     public TicTacToe(){
         board = new Board();
-        player1 = new Player("Cock", PlayerSymbol.X);
-        player2 = new Player("Dock", PlayerSymbol.O);
+        player1 = new Player("Player1", PlayerSymbol.X);
+        player2 = new Player("Player2", PlayerSymbol.O);
         currentPlayer = player1;
         isOver = false;
     }
