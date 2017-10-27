@@ -6,8 +6,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class TicTacToeTest {
-	
-	@Test
+    
+    @Test
     public void testChangePlayer(){
         TicTacToe tic = new TicTacToe();
         tic.changePlayer();
