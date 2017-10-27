@@ -51,6 +51,7 @@ public class WebUI implements SparkApplication
     private char handleRequest(int value) throws AlreadyOccupiedException,
                                                  BoundaryException,
                                                  IllegalSymbolException{
+        
         char nextmarker = ' ';
         try{
             nextmarker = tic.makeMove(value);
