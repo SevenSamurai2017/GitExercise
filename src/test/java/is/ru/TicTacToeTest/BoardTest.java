@@ -7,30 +7,38 @@ import org.junit.Test;
 public class BoardTest {
 
 	@Test
-	public void initTest() {
+	public void initTest() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
 		b.set(0, 0, 'O');
 		b.init();
-		assertEquals('1', b.get(0, 0);
+		assertEquals('1', b.get(0, 0));
 	}
 
 	@Test(expected = IllegalSymbolException.class)
-	public void setTest1() {
+	public void setTest1() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
 		b.set(2, 2, 'P');
 	}
 
 	@Test(expected = AlreadyOccupiedException.class)
-	public void setTest2() {
+	public void setTest2() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
 		b.set(2, 2, 'X');
 		b.set(2, 2, 'O');
 	}
 
 	@Test
-	public void getTest1(){
+	public void getTest1() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
 		b.set(0, 0, 'O');
-		assertEquals('O', b.get(0, 0))
+		assertEquals('O', b.get(0, 0));
 	}
 }
