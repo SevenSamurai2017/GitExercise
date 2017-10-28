@@ -13,7 +13,7 @@ public class BoardTest {
 		Board b = new Board();
 		b.set(0, 0, 'O');
 		b.init();
-		assertEquals('1', b.get(0, 0));
+		assertEquals(' ', b.get(0, 0));
 	}
 
 	@Test(expected = IllegalSymbolException.class)
