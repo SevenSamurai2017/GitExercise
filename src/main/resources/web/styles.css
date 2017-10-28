@@ -1,7 +1,7 @@
 body {
 	background-color: #222;
 	text-align: center;
-    font: 18px "Montserrat", sans-serif;
+    font: 26px "Montserrat", sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
 }
@@ -38,4 +38,9 @@ footer {
     bottom: 0;
 }
 
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6,
+#btn7, #btn8, #btn9 {
+  width: 70px;
+  height: 70px;
+}
 
