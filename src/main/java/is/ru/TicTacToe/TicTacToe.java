@@ -1,72 +1,95 @@
 package is.ru.TicTacToe;
 
-public class TicTacToe{
+import is.ru.TicTacToe.exceptions.*;
 
-	public Player player1, player2, currentPlayer;
-	public Board b;
-	public int actions;
+public class TicTacToe {
 
-	// Basic Game
-	public TicTacToe(){
-		b = new Board();
-		b.fillBoard();
-		player1 = new Player("Player 1", 'X');
-        player2 = new Player("Player 2", 'O');
+    private Player player1, player2, currentPlayer;
+    public Board board;
+    private boolean isOver;
+
+    public TicTacToe(){
+        board = new Board();
+        player1 = new Player("Player1", PlayerSymbol.X);
+        player2 = new Player("Player2", PlayerSymbol.O);
         currentPlayer = player1;
-        actions = 0;
-	}
+        isOver = false;
+    }
 
-	// Game with custom names(Player vs Player)
-	public TicTacToe(String p1Name, String p2Name){
-		b = new Board();
-        b.fillBoard();
-        player1 = new Player(p1Name, 'X');
-        player2 = new Player(p2Name, 'O');
-        currentPlayer = player1;
-        actions = 0;
-	}
+    public void changePlayer(){
+        currentPlayer = currentPlayer == player1 ? player2 : player1;
+    }
 
-	public boolean checkForWin(){
-        char winner;
-        winner = b.checkDiagonal();
-        if(winner != '1'){
-            System.out.println(currentPlayer.name + " is the winner!");
-            currentPlayer.numberOfWins++;
-            return true;
+    public char makeMove(int move) throws AlreadyOccupiedException,
+                                          BoundaryException,
+                                          IllegalSymbolException{
+        checkForWinner();                                            
+        Coordinates coord = DimensionMapper.getCoordinate(move);
+        if(isOver){
+            return board.get(coord.getRow(), coord.getColumn());
         }
-        winner = b.checkHorizontal();
-        if(winner != '1'){
-            System.out.println(currentPlayer.name + " is the winner!");
-            currentPlayer.numberOfWins++;
-            return true;
+        board.set(coord.getRow(), coord.getColumn(), currentPlayer.getMarker());
+        return currentPlayer.getMarker();
+    }
+
+    public char getBoardValue(int value) throws BoundaryException {
+        Coordinates coord = DimensionMapper.getCoordinate(value);
+        return board.get(coord.getRow(), coord.getColumn());
+    }
+
+    public String getCurrentPlayerName(){
+        return currentPlayer.getName();
+    }
+
+    public boolean checkForWinner() throws BoundaryException{
+        if(!checkDiagonal()){
+            if(!checkHorizontal()){
+                if(!checkVertical()){
+                    return false;
+                }
+            }
         }
-        winner = b.checkVertical();
-        if(winner != '1'){
-            System.out.println(currentPlayer.name + " is the winner!");
-            currentPlayer.numberOfWins++;
-            return true;
+        isOver = true;
+        return true;
+    }
+
+    private boolean checkVertical() throws BoundaryException{
+        for(int i = 0; i < 3; i++){
+            if(board.get(i, 0) == board.get(i, 1) && board.get(i, 0) == board.get(i, 2)){
+                if(board.get(i, 0) != PlayerSymbol.X && board.get(i, 0) != PlayerSymbol.O){
+                    return false;
+                }
+                return true;
+            }
         }
         return false;
     }
 
-    public void changePlayer(){
-        if(currentPlayer == player1){
-            currentPlayer = player2;
+    private boolean checkHorizontal() throws BoundaryException{
+        for(int i = 0; i < 3; i++){
+            if(board.get(0, i) == board.get(1, i) && board.get(0, i) == board.get(2, i)){
+                if(board.get(0, i) != PlayerSymbol.X && board.get(0, i) != PlayerSymbol.O){
+                    return false;
+                }
+                return true;
+            }
         }
-        else if(currentPlayer == player2){
-            currentPlayer = player1;
-        }
-        actions++;
+        return false;
     }
 
-    public Player getPlayer1(){
-        return player1;
+    private boolean checkDiagonal() throws BoundaryException{
+        if(board.get(0, 0) == board.get(1, 1) && board.get(1, 1) == board.get(2, 2)) {
+            if(board.get(0, 0) != PlayerSymbol.X && board.get(0, 0) != PlayerSymbol.O){
+                    return false;
+            }
+            return true;
+        }
+        if(board.get(0, 2) == board.get(1, 1) && board.get(1, 1) == board.get(2, 0)){
+            if(board.get(0, 2) != PlayerSymbol.X && board.get(0, 2) != PlayerSymbol.O){
+                    return false;
+            }
+            return true;
+        }
+        return false;
     }
-    public Player getPlayer2(){
-        return player2;
-    }
-    public Player getCurrentPlayer(){
-        return currentPlayer;
-    }
-    
 }
