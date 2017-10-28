@@ -1,9 +1,5 @@
 language: java
-before_install:
-- chmod +x gradlew
 notifications:
   email: false
-deploy:
-  provider: heroku
   api_key:
     secure: R86GvaFcCehqzqQIRH2h7yN6kxS/l/XdzIBJCD45KM7klvQOxYtLFvaMoibGMP9KnD/sbblUh/pWob53QxGrBn0ny2y3Bsz0TL9G+mxt9lNTLndVcGABjwUtt449DWYD5TTCNnGPk4NS/XJ1zLEFcoaL7ycG858lPznTSg8kUg0C4jV8K6SoHazpHrBHqXYmAr0hGD1NSs7WIuwg17v3sF+VhB8FfezPgggZ/Zl7eOQeoLc701opVtTRB1zM8D9F85ABrcvTWuIA1MRs2YjVuFaSjtUl1O/m6QScoA5O71SoObjSJkPc/PmVdOYw3W3edI/tyyelbue/jxROqFJK1OMwoRx2+yiGeq+Iu4V4zMGkGb1YMP9QewlsTCeB/eFyIPW8V9UTY2coPKa66WSvKbLeDLXC5DGwzuhGDo/sxL/ASNoo2D0EznR/dhDZGF0SeIadfI/IiKsiN26exFN0eQyEA1linqF2S8SdcNn+gIUzXNKZAtLuIVclY6fOsIicySuECWr8fY89PhOQfSwF8fKeokDELIMvTZhQ8BfVDPgvOMFNihUG++p+tZvTnnmyI1ErIGEf0guFLNunrppQuMcy4xPcre1NBaPsuLHg6xKkJzj7HaRt9DijXhTPMpTX5dopzYPATwU/HM+hTRf+WTr+YkuiIZHg2+FiTstuG1E=
