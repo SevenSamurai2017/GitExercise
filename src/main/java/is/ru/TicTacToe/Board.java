@@ -4,8 +4,10 @@ import is.ru.TicTacToe.exceptions.*;
 
 public class Board {
 
+    public int moveCounter;
     public char board[][];
     public Board(){
+        moveCounter = 0;
         board = new char[3][3];
         init();
     }
@@ -22,6 +24,7 @@ public class Board {
         }
         else {
             board[row][col] = marker;
+            moveCounter++;
         }
     }
 
@@ -38,6 +41,10 @@ public class Board {
         }
     }
 
+    public boolean isBoardFull(){
+        return moveCounter == 9;
+    }
+    
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
