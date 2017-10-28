@@ -100,5 +100,24 @@ $( document ).ready(
 			 );
 			 
 		});
+
+		$('#restartgame').click( function(){
+
+			$.post( "/restartgame", {},
+				function ( data )
+				{
+					$( '#btn1' ).val( data );
+					$( '#btn2' ).val( data );
+					$( '#btn3' ).val( data );
+					$( '#btn4' ).val( data );
+					$( '#btn5' ).val( data );
+					$( '#btn6' ).val( data );
+					$( '#btn7' ).val( data );
+					$( '#btn8' ).val( data );
+					$( '#btn9' ).val( data );
+				}
+			);
+			
+		});
 	}
 );

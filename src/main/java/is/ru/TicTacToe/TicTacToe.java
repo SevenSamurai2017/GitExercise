@@ -23,7 +23,7 @@ public class TicTacToe {
     public char makeMove(int move) throws AlreadyOccupiedException,
                                           BoundaryException,
                                           IllegalSymbolException{
-        checkForWinner();                                            
+        checkForWinner();                                    
         Coordinates coord = DimensionMapper.getCoordinate(move);
         if(isOver){
             return board.get(coord.getRow(), coord.getColumn());
@@ -53,24 +53,18 @@ public class TicTacToe {
         return true;
     }
 
-    private boolean checkVertical() throws BoundaryException{
+    private boolean checkHorizontal() throws BoundaryException{
         for(int i = 0; i < 3; i++){
-            if(board.get(i, 0) == board.get(i, 1) && board.get(i, 0) == board.get(i, 2)){
-                if(board.get(i, 0) != PlayerSymbol.X && board.get(i, 0) != PlayerSymbol.O){
-                    return false;
-                }
+            if(board.get(i, 0) == board.get(i, 1) && board.get(i, 0) == board.get(i, 2) && board.get(i, 0) != PlayerSymbol.NONE){
                 return true;
             }
         }
         return false;
     }
 
-    private boolean checkHorizontal() throws BoundaryException{
+    private boolean checkVertical() throws BoundaryException{
         for(int i = 0; i < 3; i++){
-            if(board.get(0, i) == board.get(1, i) && board.get(0, i) == board.get(2, i)){
-                if(board.get(0, i) != PlayerSymbol.X && board.get(0, i) != PlayerSymbol.O){
-                    return false;
-                }
+            if(board.get(0, i) == board.get(1, i) && board.get(0, i) == board.get(2, i) && board.get(0, i) != PlayerSymbol.NONE){
                 return true;
             }
         }
@@ -78,16 +72,10 @@ public class TicTacToe {
     }
 
     private boolean checkDiagonal() throws BoundaryException{
-        if(board.get(0, 0) == board.get(1, 1) && board.get(1, 1) == board.get(2, 2)) {
-            if(board.get(0, 0) != PlayerSymbol.X && board.get(0, 0) != PlayerSymbol.O){
-                    return false;
-            }
+        if(board.get(0, 0) == board.get(1, 1) && board.get(1, 1) == board.get(2, 2) && board.get(0, 0) != PlayerSymbol.NONE) {
             return true;
         }
-        if(board.get(0, 2) == board.get(1, 1) && board.get(1, 1) == board.get(2, 0)){
-            if(board.get(0, 2) != PlayerSymbol.X && board.get(0, 2) != PlayerSymbol.O){
-                    return false;
-            }
+        if(board.get(0, 2) == board.get(1, 1) && board.get(1, 1) == board.get(2, 0) && board.get(0, 2) != PlayerSymbol.NONE){
             return true;
         }
         return false;
