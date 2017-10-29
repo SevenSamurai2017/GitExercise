@@ -7,12 +7,14 @@ public class Board {
     /**
     * A two dimensional array for the board
     */
+    public int moveCounter;
     public char board[][];
 
     /**
     * Initializes the game board
     */
     public Board(){
+        moveCounter = 0;
         board = new char[3][3];
         init();
     }
@@ -39,6 +41,7 @@ public class Board {
         }
         else {
             board[row][col] = marker;
+            moveCounter++;
         }
     }
 
@@ -62,6 +65,10 @@ public class Board {
                 board[i][j] = ' ';
             }
         }
+    }
+
+    public boolean isBoardFull(){
+        return moveCounter == 9;
     }
 
     /**
