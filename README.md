@@ -25,7 +25,7 @@
 
 - [Administration Manual](docs/administration_manual.md)
 - [Development Manual](docs/dev_manual.md)
-- [Design Report](docs/design_report.txt)
+- [Design Report](docs/design_report.md)
 
 ***
 
@@ -49,4 +49,4 @@ The project was programmed in Java using:
 3. Sparks 2.5
 4. Travis CI 
 5. Heroku
-6. Selinium
+6. Selenium
