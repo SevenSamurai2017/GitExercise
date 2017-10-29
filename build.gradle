@@ -24,7 +24,7 @@ jar {
 javadoc {
     source = sourceSets.main.allJava
     classpath = configurations.compile
-	destinationDir = file("docs")
+	destinationDir = file("docs/javadocs")
 }
 
 task stage(dependsOn: installDist)
