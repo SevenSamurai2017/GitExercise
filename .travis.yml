@@ -6,8 +6,6 @@ before_install:
 - gem install selenium-webdriver
 notifications:
   email: false
-script:
-- ./gradlew seleniumXvfb
 deploy:
   provider: heroku 
   app: shielded-dawn-85701
