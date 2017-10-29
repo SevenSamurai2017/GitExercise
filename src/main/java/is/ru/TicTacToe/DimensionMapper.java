@@ -1,5 +1,8 @@
 package is.ru.TicTacToe;
 
+/**
+* Changes int values from webserver to coordinates for the board.
+*/
 public final class DimensionMapper {
 
     private DimensionMapper(){}
