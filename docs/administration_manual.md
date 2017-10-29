@@ -6,12 +6,12 @@ We Travis CI for continious integration and Heroku to run the application on the
 You can download a zip from github containing the application.
 You could also clone the the repository using the command below in console/bash.
 
-git clone https://github.com/SevenSamurai2017/TicTacToe.git
+git clone *https://github.com/SevenSamurai2017/TicTacToe.git*
 
 After cloning or downloading the repository and unzipping it you need
-to install gradle. Go to https://gradle.org/install/ and follow the instructions to install gradle depending on your operating system.
+to install gradle. Go to *https://gradle.org/install/* and follow the instructions to install gradle depending on your operating system.
 
-Next you need to install Travis CI. See https://docs.travis-ci.com/user/getting-started/ on how to do that.
+Next you need to install Travis CI. See *https://docs.travis-ci.com/user/getting-started/* on how to do that.
 
 *https://shielded-dawn-85701.herokuapp.com/*
 
@@ -23,3 +23,6 @@ Heroku create appname
 
 And then you run this command to push everything to heroku
 git push heroku master  
+
+## **Generate Javadocs**
+To generate javadocs just *run gradle javadoc*
