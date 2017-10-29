@@ -7,7 +7,7 @@ You can download a zip from github containing the application.
 You could also clone the the repository using the command below in bash.  
 
 ```
-git clone *https://github.com/SevenSamurai2017/TicTacToe.git*  
+git clone https://github.com/SevenSamurai2017/TicTacToe.git  
 ```
 
 After cloning or downloading the repository and unzipping it you need to install gradle.  
@@ -33,5 +33,5 @@ git push heroku master
 ## **Generate Javadocs**
 To generate javadocs just   
 ```
-run gradle javadoc*  
+run gradle javadoc  
 ```

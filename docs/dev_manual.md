@@ -13,7 +13,7 @@ The following things are needed to run the game on a local machine.
 
 Clone this project to your computer, run this command:  
 ```
-git clone *https://github.com/SevenSamurai2017/TicTacToe.git*
+git clone https://github.com/SevenSamurai2017/TicTacToe.git
 ```
 
 To run the application run the following commands from the root of the project:  
