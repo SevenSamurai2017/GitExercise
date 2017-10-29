@@ -18,11 +18,18 @@ Next you need to install Travis CI. See *https://docs.travis-ci.com/user/getting
 ## **Heroku Deployment**
 
 To deploy the application to Heroku. You need to clone the repository from github and get the Heroku toolbelt. From the root of the project you then need to run the following commands.
-Heroku login
-Heroku create appname
+``` 
+heroku login
+heroku create appname
+``` 
 
-And then you run this command to push everything to heroku
+And then you run this command to push everything to Heroku.
+``` 
 git push heroku master  
+``` 
 
 ## **Generate Javadocs**
-To generate javadocs just *run gradle javadoc*
+To generate javadocs just run: 
+``` 
+gradle javadoc
+``` 

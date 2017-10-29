@@ -1,30 +1,20 @@
 package is.ru.TicTacToe;
 
-
 public class Player {
 
-    protected String name;
-    protected char marker;
-    protected int numberOfWins;
+    private String name;
+    private char marker;
 
     public Player(String name, char marker){
         this.name = name;
         this.marker = marker;
-        numberOfWins = 0;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
-    public int getNumberOfWins(){
-        return numberOfWins;
-    }
-
-    public void playerWon(){
-    	numberOfWins++;
-    }
-
-    public void playerAction(TicTacToe tic){
-
+    public char getMarker() {
+        return marker;
     }
 }

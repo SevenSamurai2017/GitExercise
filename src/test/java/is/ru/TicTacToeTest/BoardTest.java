@@ -1,38 +1,44 @@
 package is.ru.TicTacToe;
 
+import is.ru.TicTacToe.exceptions.*;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class BoardTest {
 
 	@Test
-	public void fillBoardTest() {
+	public void initTest() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
-		b.fillBoard();
-		assertEquals('1', b.board[0][0]);
+		b.set(0, 0, 'O');
+		b.init();
+		assertEquals(' ', b.get(0, 0));
 	}
-	@Test
-	public void checkVerticalTest() {
+
+	@Test(expected = IllegalSymbolException.class)
+	public void setTest1() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
-		b.board[0][0] = 'X';
-		b.board[0][1] = 'X';
-		b.board[0][2] = 'X';
-		assertEquals('X', b.checkVertical());
+		b.set(2, 2, 'P');
 	}
-	@Test
-	public void checkHorizontalTest() {
+
+	@Test(expected = AlreadyOccupiedException.class)
+	public void setTest2() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
-		b.board[0][0] = 'O';
-		b.board[1][0] = 'O';
-		b.board[2][0] = 'O';
-		assertEquals('O', b.checkHorizontal());
+		b.set(2, 2, 'X');
+		b.set(2, 2, 'O');
 	}
+
 	@Test
-	public void checkDiagonalTest() {
+	public void getTest1() throws AlreadyOccupiedException,
+                                  BoundaryException ,
+                                  IllegalSymbolException {
 		Board b = new Board();
-		b.board[0][0] = 'O';
-		b.board[1][1] = 'O';
-		b.board[2][2] = 'O';
-		assertEquals('O', b.checkDiagonal());
+		b.set(0, 0, 'O');
+		assertEquals('O', b.get(0, 0));
 	}
 }
