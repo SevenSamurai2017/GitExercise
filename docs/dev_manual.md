@@ -11,11 +11,16 @@ The following things are needed to run the game on a local machine.
 
 ## **Running the project**
 
-Clone this project to your computer, run this command:
+Clone this project to your computer, run this command:  
+```
 git clone *https://github.com/SevenSamurai2017/TicTacToe.git*
+```
 
 To run the application run the following commands from the root of the project:  
- *gradle build run*  
+```
+gradle build run*  
+```
+
 Go to *http://localhost:4567* to play the game.  
 
 ## **Playing on the internet** 
