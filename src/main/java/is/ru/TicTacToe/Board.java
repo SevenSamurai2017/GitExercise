@@ -30,7 +30,7 @@ public class Board {
     public void set(int row, int col, char marker)throws AlreadyOccupiedException,
                                                          BoundaryException,
                                                          IllegalSymbolException{
-        BoundryChecker.checkBoundary(row, col);
+        BoundaryChecker.checkBoundary(row, col);
         if(marker != PlayerSymbol.X && marker != PlayerSymbol.O){
             throw new IllegalSymbolException();
         }
@@ -42,7 +42,7 @@ public class Board {
         }
     }
 
-    /** 
+    /**
     * @param row Row in board
     * @param col Column in board
     * @throws BoundaryException invalid location
