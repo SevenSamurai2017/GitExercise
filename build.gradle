@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = 'is.ru.TicTacToe.WebServer'
+mainClassName = 'is.ru.Server.WebServer'
 
 repositories {
 	mavenCentral()
@@ -27,14 +27,14 @@ dependencies {
 
 jar {
 	manifest {
-		attributes("Main-Class": "is.ru.TicTacToe.WebServer")
+		attributes("Main-Class": "is.ru.Server.WebServer")
 	}
 }
 
 javadoc {
     source = sourceSets.main.allJava
     classpath = configurations.compile
-	destinationDir = file("docs")
+	destinationDir = file("docs/javadocs")
 }
 
 task stage(dependsOn: installDist)

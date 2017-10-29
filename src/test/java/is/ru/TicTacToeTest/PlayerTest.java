@@ -1,5 +1,7 @@
 package is.ru.TicTacToe;
 
+import is.ru.TicTacToe.Game_domain.*;
+import is.ru.TicTacToe.Game_logic.*;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
