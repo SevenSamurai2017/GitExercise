@@ -49,7 +49,7 @@ public class Board {
     * @param row Row in board
     * @param col Column in board
     * @throws BoundaryException invalid location
-    * <return> returns what is in the selected location
+    * <return> returns char from the selected location
     */
     public char get(int row, int col)throws BoundaryException{
         BoundaryChecker.checkBoundary(row, col);
@@ -69,6 +69,7 @@ public class Board {
 
 	/**
 	* Checks if board is full
+	* <return> returns boolean
 	*/
     public boolean isBoardFull(){
         return moveCounter == 9;
