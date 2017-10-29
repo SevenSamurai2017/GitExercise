@@ -67,6 +67,9 @@ public class Board {
         }
     }
 
+	/**
+	* Checks if board is full
+	*/
     public boolean isBoardFull(){
         return moveCounter == 9;
     }
