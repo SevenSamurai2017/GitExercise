@@ -2,10 +2,6 @@ package is.ru.TicTacToe;
 
 import is.ru.TicTacToe.exceptions.*;
 
-/**
-*
-*
-*/
 public class TicTacToe {
 
     private Player player1, player2, currentPlayer, winner;
@@ -45,7 +41,8 @@ public class TicTacToe {
     public char makeMove(int move) throws AlreadyOccupiedException,
                                           BoundaryException,
                                           IllegalSymbolException{
-        checkForWinner();                          
+
+        checkForWinner();                       
         Coordinates coord = DimensionMapper.getCoordinate(move);
         if(isOver){
 
