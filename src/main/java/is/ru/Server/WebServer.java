@@ -1,30 +1,24 @@
-package is.ru.TicTacToe;
+package is.ru.Server;
 
+import is.ru.TicTacToe.Game_logic.TicTacToe;
 import static spark.Spark.*;
 import spark.*;
 import spark.servlet.SparkApplication;
-import is.ru.TicTacToe.exceptions.*;
+import is.ru.TicTacToe.Game_exceptions.*;
 
-/**
-* Webserver that uses Spark.
-*/
 public class WebServer implements SparkApplication
 {
+    
     private TicTacToe tic;
 
     public static void main(String[] args) {
         staticFileLocation("/web");
         SparkApplication web  = new WebServer();
         String port = System.getenv("PORT");
-		
         if (port != null) port(Integer.valueOf(port));
         web.init();
     }
 
-	/**
-	* Initialize the game.
-	* Setup the board and restart button
-	*/
     @Override
     public void init()
     {
@@ -32,7 +26,6 @@ public class WebServer implements SparkApplication
         
         get("/", (req, res) ->  {
             tic = new TicTacToe();
-            //res.status(200);
             return "";
         });
 
@@ -47,16 +40,10 @@ public class WebServer implements SparkApplication
         post("/btn9", (req, res) ->  handleRequest(8));
         
         post("/restartgame", (req, res) -> restartRequest());
+
+        
     }
 
-	/**
-	* Request handler for the webserver, checks if space is open or occupied.
-	* @param value int indicating the space pushed on the board.
-	* @throws AlreadyOccupiedException if space is occupied.
-	* @throws BoundaryException invalid position.
-	* @throws IllegalSymbolException symbol not valid.
-	* <return> returns char value for space.
-	*/
     private char handleRequest(int value)throws AlreadyOccupiedException,
                                                 BoundaryException,
                                                 IllegalSymbolException{
@@ -69,16 +56,12 @@ public class WebServer implements SparkApplication
         catch (BoundaryException ex) {}
         catch (AlreadyOccupiedException ex) {}
 
+        
         return tic.getBoardValue(value);
     }
-	
-	/**
-	* Restart the game.
-	* <return> returns char value ' ' to reset the board.
-	*/
     private char restartRequest(){
         tic = new TicTacToe();
-        //res.status(200);
         return ' ';        
     }
+
 }

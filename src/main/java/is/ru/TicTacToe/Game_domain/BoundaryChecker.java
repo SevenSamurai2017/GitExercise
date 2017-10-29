@@ -1,9 +1,9 @@
-package is.ru.TicTacToe;
+package is.ru.TicTacToe.Game_domain;
 
-import is.ru.TicTacToe.exceptions.*;
+import is.ru.TicTacToe.Game_exceptions.*;
 
 /**
-* Checks if location is out of bounds
+* Checks location is out of bounds
 */
 public final class BoundaryChecker {
     private BoundaryChecker() {};

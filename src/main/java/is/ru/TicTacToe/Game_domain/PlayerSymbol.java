@@ -1,8 +1,5 @@
-package is.ru.TicTacToe;
+package is.ru.TicTacToe.Game_domain;
 
-/**
-* Class containing the symbol of player.
-*/
 public class PlayerSymbol {
     public static final char X = 'X';
     public static final char O = 'O';
