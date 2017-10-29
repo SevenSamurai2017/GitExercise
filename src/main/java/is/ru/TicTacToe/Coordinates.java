@@ -1,5 +1,8 @@
 package is.ru.TicTacToe;
 
+/**
+* Generates coordinates for the grid.
+*/
 public class Coordinates {
 
     private int column;

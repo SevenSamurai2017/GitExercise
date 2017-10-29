@@ -1,5 +1,8 @@
 package is.ru.TicTacToe;
 
+/**
+* Class containing player info.
+*/
 public class Player {
 
     private String name;
