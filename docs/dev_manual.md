@@ -22,6 +22,7 @@ To run the application write the following command in bash from the root of the 
 ```
 gradle build run  
 ```
+The jar file is generated in the Gradle install folder.
 
 Go to *http://localhost:4567* in a browser to play the game.  
 
