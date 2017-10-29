@@ -3,7 +3,7 @@ package is.ru.TicTacToe;
 import is.ru.TicTacToe.exceptions.*;
 
 /**
-* Checks location is out of bounds
+* Checks if location is out of bounds
 */
 public final class BoundaryChecker {
     private BoundaryChecker() {};
