@@ -2,6 +2,9 @@ package is.ru.TicTacToe;
 
 import is.ru.TicTacToe.exceptions.*;
 
+/**
+* The game logic
+*/
 public class TicTacToe {
 
     private Player player1, player2, currentPlayer, winner;
@@ -10,8 +13,7 @@ public class TicTacToe {
     private boolean isOver;
 
     /**
-    *
-    *
+    * Initializes the game
     */
     public TicTacToe(){
         board = new Board();
@@ -36,7 +38,7 @@ public class TicTacToe {
     /**
     * Marks move if game is not over
     * @param move selected location for marker
-    * <return> returns marker
+    * <return> returns char marker for the current player
     */
     public char makeMove(int move) throws AlreadyOccupiedException,
                                           BoundaryException,
@@ -56,7 +58,6 @@ public class TicTacToe {
     }
 
     /**
-    *
     * @param value The location where we want to get the value from
     * <return> returns char value of location
     */
@@ -74,13 +75,17 @@ public class TicTacToe {
 
     /**
     *
-    * <return> returns
+    * <return> returns the winning player
     */
     public Player getWinner(){
         
         return winner;
     }
 
+	/**
+	* Checks if a game has been won
+	* <return> returns boolean False if there is no winner, true if there is a winner
+	*/
     public boolean checkForWinner() throws BoundaryException{
         if(isOver){ return true; }
         if(!checkDiagonal()){
@@ -98,8 +103,8 @@ public class TicTacToe {
     }
 
     /**
-    *
-    *
+    * Checks if the game has been won horizontally
+    * <return> returns boolean true if there is a horizontal winner, false otherwise
     */
     private boolean checkHorizontal() throws BoundaryException{
         for(int i = 0; i < 3; i++){
@@ -111,8 +116,8 @@ public class TicTacToe {
     }
 
     /**
-    *
-    *
+    * Checks if the game has been won vertically
+    * <return> returns boolean true if there is a vertical winnar, false otherwise
     */
     private boolean checkVertical() throws BoundaryException{
         for(int i = 0; i < 3; i++){
@@ -124,8 +129,8 @@ public class TicTacToe {
     }
 
     /**
-    *
-    *
+    * Checks if the game has been won diagonally
+    * <return> returns boolean true if there is a diagonal winnar, false otherwise
     */
     private boolean checkDiagonal() throws BoundaryException{
         if(board.get(0, 0) == board.get(1, 1) && board.get(1, 1) == board.get(2, 2) && board.get(0, 0) != PlayerSymbol.NONE) {
