@@ -1,8 +1,5 @@
-package is.ru.TicTacToe;
+package is.ru.TicTacToe.Game_domain;
 
-/**
-* Class containing player info.
-*/
 public class Player {
 
     private String name;

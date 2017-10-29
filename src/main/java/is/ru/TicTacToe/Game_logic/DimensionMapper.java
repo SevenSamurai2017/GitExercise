@@ -1,8 +1,7 @@
-package is.ru.TicTacToe;
+package is.ru.TicTacToe.Game_logic;
 
-/**
-* Changes int values from webserver to coordinates for the board.
-*/
+import is.ru.TicTacToe.Game_domain.Coordinates;
+
 public final class DimensionMapper {
 
     private DimensionMapper(){}

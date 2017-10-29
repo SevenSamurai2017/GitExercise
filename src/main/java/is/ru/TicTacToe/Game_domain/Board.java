@@ -1,6 +1,6 @@
-package is.ru.TicTacToe;
+package is.ru.TicTacToe.Game_domain;
 
-import is.ru.TicTacToe.exceptions.*;
+import is.ru.TicTacToe.Game_exceptions.*;
 
 public class Board {
 
