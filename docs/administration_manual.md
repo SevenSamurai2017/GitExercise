@@ -32,7 +32,9 @@ And then you run this command in bash to push everything to heroku.
 git push heroku master  
 ```  
 ## **Generate Javadocs**
-To generate javadocs just enter the following command in the root of the project.    
+
+To generate javadocs just enter the following command in the root of the project.
+    
 ```
 run gradle javadoc  
 ```
