@@ -1,9 +1,9 @@
 # **Development manual**  
 
 The following things are needed to run the game on a local machine.  
-	* Git 
-	* Java 
-	* Gradle  
+* Git 
+* Java 
+* Gradle  
 
 ## **Setting up the environment**  
 
