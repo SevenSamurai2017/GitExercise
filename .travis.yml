@@ -3,19 +3,21 @@ jdk:
 - oraclejdk8
 before_install:
 - chmod +x gradlew
+- gem install selenium-webdriver
 notifications:
   email: false
+script:
+- ./gradlew seleniumXvfb
 deploy:
   provider: heroku 
   app: shielded-dawn-85701
   api_key:
     secure: XcRt5X5JeLHl0LDrJAT0U7JW/VFInvm5wfHzitpzRHn2erQ8UJ+gqM2zionfohFlo0iaHxxdwhmWQF8dj9AaBmdHHpc+kdhbVuK7qcuwfRMgpOo4VL8RBrpoeJiXBsxzbMbPSpiGicv8v08byE+B9ig0x8ux5NJMtPiW0ga8lZzVAoQANA0XxBUakiYgxw3Ct2poR5WFdDnwgQoLU2oKEeIyXPLlbI6L8n+z1lBNLjtE0jRBRCx2xNEMzOEXW+3YyxMJHxDdyoIy09LqfAaHMuDjNsycE1uhijlurMKiy938R48wUb7x4EbnJLqvJuuwj6SURpmJsN7Mloe5OJSEsf3XFsxWRSKMGr1Ks+kxAfqEtQjYLgDD9tDPMqquDoQ8PuCorFXn+j/t4lX5eHy1CQ4CR3c3pyxe+apbpoI4ql3CTckFSL5mJu9pUeTmuC5BATRma8/4d+CfKtJ1OBx9nNqHiIssd34IAxKab7aF/BovVdhPhMjNNpJcg4ZoFaA8c/1OhZBfz2PvsjllyUV91iMmQ2NC54omh+lxxKYp+ZmqHuiIxtFIpl0VHynngWb2+FOIqe/Jvxq5JuyHbfCaJGoSwHCA33XEz/iQ4iWG0W18wNn4wGe+nUWdvEMHtZRbKMDcNNH3Ccmknv0J+1cTJ5I7vt3i321FhMskzLMyRoU=
-script:
-  - ./gradlew seleniumXvfb
 addons:
-  sauce_connect:
-    username: "arnarpeturs"
-    access_key: "d1bd2ddd-bd70-471e-a49e-204c0435fb93"
+  sauce_connect: true
+  #sauce_connect:
+   # username: "arnarpeturs"
+    #access_key: "d1bd2ddd-bd70-471e-a49e-204c0435fb93"
 addons: # get google-chrome-stable
   chrome: stable
 install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
