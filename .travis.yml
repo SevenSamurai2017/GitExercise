@@ -4,6 +4,7 @@ jdk:
 before_install:
 - chmod +x gradlew
 - gem install selenium-webdriver
+- "java -jar selenium-server-standalone-2.31.0.jar &"
 notifications:
   email: false
 deploy:
