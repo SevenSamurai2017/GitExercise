@@ -4,7 +4,7 @@ We hosted our application on a open repository on github.com *https://github.com
 We Travis CI for continious integration and Heroku to run the application on the web.
 
 You can download a zip from github containing the application.
-You could also clone the the repository using the command below in console/bash.
+You could also clone the the repository using the command below in bash.
 
 git clone *https://github.com/SevenSamurai2017/TicTacToe.git*
 
@@ -18,18 +18,11 @@ Next you need to install Travis CI. See *https://docs.travis-ci.com/user/getting
 ## **Heroku Deployment**
 
 To deploy the application to Heroku. You need to clone the repository from github and get the Heroku toolbelt. From the root of the project you then need to run the following commands.
-``` 
-heroku login
-heroku create appname
-``` 
+Heroku login
+Heroku create appname
 
-And then you run this command to push everything to Heroku.
-``` 
+And then you run this command to push everything to heroku
 git push heroku master  
-``` 
 
 ## **Generate Javadocs**
-To generate javadocs just run: 
-``` 
-gradle javadoc
-``` 
+To generate javadocs just *run gradle javadoc*
