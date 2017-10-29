@@ -89,4 +89,5 @@ public class TicTacToeTest {
         tic.makeMove(8);
         assertEquals(true, tic.checkForWinner());
     }
+
 }
