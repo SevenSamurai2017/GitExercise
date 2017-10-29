@@ -24,8 +24,8 @@ public class WebServer implements SparkApplication
         tic = new TicTacToe();
         
         get("/", (req, res) ->  {
-                tic = new TicTacToe();
-                res.status(200);
+            tic = new TicTacToe();
+            //res.status(200);
             return "";
         });
 
@@ -39,6 +39,9 @@ public class WebServer implements SparkApplication
         post("/btn8", (req, res) ->  handleRequest(7));
         post("/btn9", (req, res) ->  handleRequest(8));
         
+        post("/restartgame", (req, res) -> restartRequest());
+
+        
     }
 
     private char handleRequest(int value)throws AlreadyOccupiedException,
@@ -47,20 +50,19 @@ public class WebServer implements SparkApplication
         try
         {
             tic.makeMove(value);
+            tic.changePlayer();
         }
-        catch (IllegalSymbolException ex) { }
-        catch (BoundaryException ex) { }
-        catch (AlreadyOccupiedException ex) { }
+        catch (IllegalSymbolException ex) {}
+        catch (BoundaryException ex) {}
+        catch (AlreadyOccupiedException ex) {}
 
-        tic.changePlayer();
+        
         return tic.getBoardValue(value);
     }
-/*
-    private char handleRequest(int value) throws AlreadyOccupiedException,
-                                                 BoundaryException,
-                                                 IllegalSymbolException{
-        tic.makeMove(value);
-        return tic.getBoardValue(value);
+    private char restartRequest(){
+        tic = new TicTacToe();
+        //res.status(200);
+        return ' ';        
     }
-*/
+
 }
