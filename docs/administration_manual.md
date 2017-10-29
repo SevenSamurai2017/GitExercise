@@ -29,7 +29,7 @@ git push heroku master
 ``` 
 
 ## **Generate Javadocs**
-To generate javadocs just: 
+To generate javadocs just run: 
 ``` 
-run gradle javadoc
+gradle javadoc
 ``` 
