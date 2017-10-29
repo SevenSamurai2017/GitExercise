@@ -38,3 +38,7 @@ To generate javadocs just enter the following command in the root of the project
 ```
 run gradle javadoc  
 ```
+
+## **Selenium Tests**
+
+We could not get Selenium to run through Travis, but we could  run the tests locally with *https://saucelabs.com/*
